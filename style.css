@@ -1,0 +1,160 @@
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f3f4f6;
+  color: #333;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 { 
+  text-align: center;
+  padding: 20px;
+  background: #1e3a8a;
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  animation: slideDown 0.7s ease-out;
+}
+
+.filters {
+  text-align: center;
+  padding: 15px;
+  background: #e5e7eb;
+}
+
+.filters button {
+  margin: 8px;
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.filters button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+#news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.news-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(15px);
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.news-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.news-card img {
+  width: 100%;
+  height: auto; /* Let the image keep its aspect ratio */
+  max-height: 250px; /* Optional limit for very tall images */
+  object-fit: cover;
+}
+
+.news-card h2 {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+.news-card p {
+  font-size: 0.95rem;
+  margin: 10px;
+  color: #555;
+  flex-grow: 1; /* This allows text to expand card naturally */
+}
+
+.news-card a {
+  display: inline-block;
+  margin: 10px;
+  padding: 8px 12px;
+  background: #1e3a8a;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  align-self: flex-start;
+}
+
+.news-card a:hover {
+  background: #0f172a;
+  transform: scale(1.05);
+}
+
+/* ===== Bottom Load More Button ===== */
+#load-more {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+#load-more button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #10b981; /* green to differentiate */
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#load-more button:hover {
+  background: #059669;
+  transform: scale(1.07);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

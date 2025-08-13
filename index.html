@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Aggregator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+  <h1>News Aggregator</h1> 
+
+  <!-- Top Filters -->
+  <div class="filters">
+    <button onclick="getNews('general')">General</button>
+    <button onclick="getNews('technology')">Technology</button>
+    <button onclick="getNews('sports')">Sports</button>
+  </div>
+
+  <!-- News Cards -->
+  <div id="news-container"></div>
+
+  <!-- Bottom Load More Button -->
+  <div id="load-more" style="text-align:center; margin: 20px;">
+    <button onclick="getRSSFeed('https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml')">
+      Load More Tech RSS
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
